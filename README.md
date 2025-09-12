@@ -50,8 +50,8 @@ The demo showcases:
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/SpreadChain-Solutions/SpreadChain-Gaming-MVP-v1
-cd SpreadChain-Gaming-MVP-v1
+git clone https://github.com/SpreadChain-Solutions/SpreadChain-Gaming-MVP-v2
+cd SpreadChain-Gaming-MVP-v2
 ```
 
 ### 2. Install Dependencies
