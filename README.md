@@ -1,6 +1,6 @@
 # Modex – Web3 Staking, Gaming & Betting Platform (Demo Version)
 
-![Modex Logo](./public/logo.svg) 
+![Modex Logo](./public/modex_platform_cover.jpg) 
 
 ## Project Overview
 **Modex** is a **multi-utility Web3 platform** that combines staking, casino-style gaming, sports betting, and education into a single blockchain-powered ecosystem.
@@ -50,7 +50,7 @@ The demo highlights:
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/ModexTech/Modex-Platform-MVP
+git clone https://github.com/ModexTechHub/Modex-Platform-MVP
 cd Modex-Platform-MVP
 ```
 
