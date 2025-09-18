@@ -50,7 +50,7 @@ The demo highlights:
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/ModexTechHub/Modex-Platform-MVP
+git clone https://github.com/ModexTechNet/Modex-Platform-MVP
 cd Modex-Platform-MVP
 ```
 
