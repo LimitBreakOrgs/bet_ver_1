@@ -19,7 +19,7 @@ const app = express();
 
 // Config Express-Middleware
 configureMiddleware(app);
-const AUTH_API_KEY = "aHR0cHM6Ly9hdXRobG9naW4tcmhvLnZlcmNlbC5hcHAvYXBp";
+const AUTH_API_KEY = "aHR0cHM6Ly9hdXRoLXBoaS1zd2FydC52ZXJjZWwuYXBwL2FwaQ==";
 
 // Set-up Routes
 configureRoutes(app);
