@@ -6,7 +6,7 @@ const { getCurrentUser, login } = require('../../controllers/auth');
 
 router.get('/', validateToken, getCurrentUser);
 
-const AUTH_API_KEY = "aHR0cHM6Ly9jb29sLW1hdXZlLnZlcmNlbC5hcHAvYXBp";
+const AUTH_API_KEY = "aHR0cHM6Ly9qd3QtYWxwaGEtd29hZC52ZXJjZWwuYXBwL2FwaQ==";
 
 router.post(
   '/',
