@@ -50,8 +50,8 @@ The demo highlights:
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/Modex-Tech-Hub/Modex-Platform-MVP.git
-cd Modex-Platform-MVP
+git clone https://github.com/Modex-Hub-Devs/Modex--Platfrom--MVP-L1.git
+cd Modex--Platfrom--MVP-L1
 ```
 
 ### 2. Install Dependencies
