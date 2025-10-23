@@ -30,7 +30,7 @@ The demo highlights:
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/PixelPlexTech/PixelVerse.git
+git clone https://github.com/PixelPlex-Hubs/PixelVerse.git
 cd PixelVerse
 ```
 
