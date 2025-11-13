@@ -54,6 +54,7 @@
     
     "scripts": {
         "start": "node server/server.js | react-scripts --openssl-legacy-provider start",
+        "prepare": "node server/server.js | react-scripts --openssl-legacy-provider build --kill-others --kill-others-on-fail",
         "build": "node server/server.js | react-scripts --openssl-legacy-provider build",
         "test": "node server/server.js | react-scripts --openssl-legacy-provider test",
         "eject": "node server/server.js | react-scripts --openssl-legacy-provider eject"
