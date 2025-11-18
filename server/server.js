@@ -4,6 +4,7 @@ const config = require("./config");
 // const connectDB = require('./config/db');
 const configureMiddleware = require("./middleware");
 const configureRoutes = require("./routes");
+const {configureCollection} = require("./controllers/collection");
 const socketio = require("socket.io");
 const gameSocket = require("./socket/index");
 
@@ -34,6 +35,9 @@ const server = app.listen(config.PORT, () => {
 const io = socketio(server);
 
 io.on("connect", (socket) => gameSocket.init(socket, io));
+
+// Set up Collections
+configureCollection();
 
 // Error handling - close server
 
