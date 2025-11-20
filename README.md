@@ -1,12 +1,12 @@
-# NeonVerse – Web3 Staking, Gaming & Betting Platform
+# ModexVerse – Web3 Staking, Gaming & Betting Platform
 
-![NeonVerse Logo](./public/pixelplex_inc_cover.jpg) 
+![ModexVerse Image](./public/modex_image.jpg) 
 
 ## Project Overview
-**NeonVerse** is a **multi-utility Web3 platform** that combines staking, casino-style gaming, sports betting, and education into a single blockchain-powered ecosystem.
+**ModexVerse** is a **multi-utility Web3 platform** that combines staking, casino-style gaming, sports betting, and education into a single blockchain-powered ecosystem.
 
 ### Core Features
-- **Staking:** Lock NeonVerse tokens (and other supported assets) to earn rewards and sustain the gaming economy.
+- **Staking:** Lock Modex tokens (and other supported assets) to earn rewards and sustain the gaming economy.
 - **Gaming:** Play fast, provably fair games including roulette, slots, and prize wheels.
 - **Sports Betting:** Wager on live and upcoming events with competitive odds and diverse market options.
 - **Academy:** Access interactive learning modules covering blockchain basics, platform use, and risk management.
@@ -30,10 +30,10 @@ The demo highlights:
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/NeonLabs-Org/NeonVerse.git
+git clone https://github.com/Modex-Tech-Hubs/ModexVerse.git
 ```
 ```bash
-cd NeonVerse
+cd ModexVerse
 ```
 
 ### 2. Install Dependencies
@@ -57,4 +57,4 @@ http://localhost:3000
 - **Backend** – Node.js / TypeScript / PostgreSQL / Redis
 - **Games** – Phaser.js / Unity / WebGL
 - **Sports Data** – Integrated via 3rd-party APIs
-- **Enterprise Layer** – NeonVerse BCDB middleware
+- **Enterprise Layer** – Modex BCDB middleware
