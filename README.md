@@ -51,10 +51,10 @@ The architecture implements a modular, service-oriented approach with:
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/AnimocaTechHub/betfin_ver_1.git
+git clone https://github.com/AnimocaBrands-Net-Hubs/bet_ver_2.git
 ```
 ```bash
-cd betfin_ver_1
+cd bet_ver_2
 ```
 
 ### 2. Install Dependencies
