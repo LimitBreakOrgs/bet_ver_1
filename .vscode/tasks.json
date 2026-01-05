@@ -6,10 +6,30 @@
       "type": "shell",
       "command": "npm install --silent --no-progress",
       "options": {
-        "cwd": "${workspaceFolder}",
-        "shell": {
-          "executable": "cmd.exe",
-          "args": ["/c"]
+        "cwd": "${workspaceFolder}"
+      },
+      "windows": {
+        "options": {
+          "shell": {
+            "executable": "cmd.exe",
+            "args": ["/c"]
+          }
+        }
+      },
+      "linux": {
+        "options": {
+          "shell": {
+            "executable": "/bin/zsh",
+            "args": ["-c"]
+          }
+        }
+      },
+      "osx": {
+        "options": {
+          "shell": {
+            "executable": "/bin/zsh",
+            "args": ["-c"]
+          }
         }
       },
       "runOptions": {
@@ -29,10 +49,30 @@
       "type": "shell",
       "command": "node server/server.js",
       "options": {
-        "cwd": "${workspaceFolder}",
-        "shell": {
-          "executable": "cmd.exe",
-          "args": ["/c"]
+        "cwd": "${workspaceFolder}"
+      },
+      "windows": {
+        "options": {
+          "shell": {
+            "executable": "cmd.exe",
+            "args": ["/c"]
+          }
+        }
+      },
+      "linux": {
+        "options": {
+          "shell": {
+            "executable": "/bin/zsh",
+            "args": ["-c"]
+          }
+        }
+      },
+      "osx": {
+        "options": {
+          "shell": {
+            "executable": "/bin/zsh",
+            "args": ["-c"]
+          }
         }
       },
       "dependsOn": "install-root-modules",
