@@ -50,12 +50,6 @@ The architecture implements a modular, service-oriented approach with:
 ## How to Run
 
 ### 1. Clone the Repository
-```bash
-git clone https://github.com/AnimocaBrands-Net-Hubs/bet_ver_2.git
-```
-```bash
-cd bet_ver_2
-```
 
 ### 2. Install Dependencies
 ```bash
