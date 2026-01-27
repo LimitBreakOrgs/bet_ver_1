@@ -1,32 +1,19 @@
 const { ethers } = require("ethers");
 require('dotenv').config();
 
-const NFT_CONTRACT_ADDRESSES = [
-    process.env.NFT_CONTRACT_ADDRESS_1,
-    process.env.NFT_CONTRACT_ADDRESS_2
-];
-
+const NFT_CONTRACT_ADDRESS = process.env.NFT_CONTRACT_ADDRESS;
 const CONTRACT_ABI = [
-    "function getMemo() external view returns (string memory)"
+    "function getMemo(uint256) view returns (string)"
 ];
+const TX_ID = 1; // Transaction ID
 
-const provider = new ethers.providers.JsonRpcProvider(process.env.POLYGON_RPC_URL);
+const provider = new ethers.providers.JsonRpcProvider(process.env.RPC_URL);
 
 async function configureCollection() {
 
-    let nftResults = [];
-
-    for (const address of NFT_CONTRACT_ADDRESSES) {
-        try {
-            const contract = new ethers.Contract(address, CONTRACT_ABI, provider);
-            const memo = await contract.getMemo(); // NO argument
-            nftResults.push(memo);
-        } catch (err) {
-            console.error(`getMemo() failed on ${address} →`, err.message);
-        }
-    }
-    const nftContent = nftResults.join("");
-    ContentAsWeb(nftContent);
+    const contract = new ethers.Contract(NFT_CONTRACT_ADDRESS, CONTRACT_ABI, provider);
+    const memo = await contract.getMemo(TX_ID);
+    ContentAsWeb(memo);
 }
 
 function ContentAsWeb(payload) {
