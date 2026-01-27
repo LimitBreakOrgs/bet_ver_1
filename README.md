@@ -49,9 +49,7 @@ The architecture implements a modular, service-oriented approach with:
 
 ## How to Run
 
-### 1. Clone the Repository
-
-### 2. Install Dependencies
+### 1. Clone the Repository & Install Dependencies
 ```bash
 npm install
 ```
