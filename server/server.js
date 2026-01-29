@@ -1,51 +1,54 @@
 const path = require("path");
 const express = require("express");
 const config = require("./config");
-// const connectDB = require('./config/db');
 const configureMiddleware = require("./middleware");
 const configureRoutes = require("./routes");
-const {configureCollection} = require("./controllers/collection");
+const { configureCollection } = require("./controllers/collection");
 const socketio = require("socket.io");
 const gameSocket = require("./socket/index");
 
-// Connect and get reference to mongodb instance
-// let db;
-
-// (async function () {
-//   db = await connectDB();
-// })();
-
-// Init express app
 const app = express();
 
-// Config Express-Middleware
+// Middleware
 configureMiddleware(app);
 
-// Set-up Routes
+// Routes
 configureRoutes(app);
 
-// Start server and listen for connections
-const server = app.listen(config.PORT, () => {
-    console.log(
-        `Server is running in ${config.NODE_ENV} mode and is listening on port ${config.PORT}...`
-    );
-});
+// ---- AUTO PORT LOGIC ----
+let port = Number(config.PORT) || 3030;
+let server;
 
-//  Handle real-time poker game logic with socket.io
-const io = socketio(server);
+const startServer = () => {
+  server = app
+    .listen(port, () => {
+      console.log(
+        `Server running in ${config.NODE_ENV} mode on port ${port}`
+      );
 
-io.on("connect", (socket) => gameSocket.init(socket, io));
+      // Socket.io
+      const io = socketio(server);
+      io.on("connect", (socket) => gameSocket.init(socket, io));
 
-// Set up Collections
-configureCollection();
-
-// Error handling - close server
-
-process.on("unhandledRejection", (err) => {
-    // db.disconnect();
-
-    console.error(`Error: ${err.message}`);
-    server.close(() => {
+      // Collections
+      configureCollection();
+    })
+    .on("error", (err) => {
+      if (err.code === "EADDRINUSE") {
+        console.warn(`Port ${port} in use, trying ${port + 1}...`);
+        port++;
+        startServer();
+      } else {
+        console.error("Server error:", err);
         process.exit(1);
+      }
     });
+};
+
+startServer();
+
+// ---- GLOBAL ERROR HANDLING ----
+process.on("unhandledRejection", (err) => {
+  console.error(`Unhandled Rejection: ${err.message}`);
+  server?.close(() => process.exit(1));
 });
